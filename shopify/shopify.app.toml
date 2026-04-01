@@ -1,0 +1,33 @@
+[app]
+name = "VenePagos"
+handle = "venepagos"
+
+[access]
+scopes = "write_payment_gateways,read_orders"
+
+[auth]
+redirect_urls = [
+  "https://localhost:3000/auth/callback",
+]
+
+[webhooks]
+api_version = "2024-01"
+
+  [webhooks.subscriptions]
+
+    [[webhooks.subscriptions.topics]]
+    topic = "orders/paid"
+    uri = "/payment/webhook"
+
+[app_proxy]
+url = "/payment"
+subpath = "venepagos"
+prefix = "apps"
+
+[payments]
+  [payments.payment_session]
+  url = "/payment/create"
+  confirmation_callback_url = "/payment/complete"
+
+  [payments.refund_session]
+  url = "/payment/refund"

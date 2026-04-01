@@ -1,0 +1,22 @@
+{
+    "name": "venepagos/sdk",
+    "description": "SDK oficial de VenePagos para PHP",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VenePagos\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VenePagos\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

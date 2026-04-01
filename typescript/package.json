@@ -1,0 +1,53 @@
+{
+  "name": "@venepagos/sdk",
+  "version": "1.0.0",
+  "description": "SDK oficial de VenePagos para TypeScript/JavaScript. Integra pagos, links de pago y checkout en tu aplicación.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "venepagos",
+    "pagos",
+    "payment",
+    "checkout",
+    "venezuela",
+    "pasarela",
+    "sdk"
+  ],
+  "author": "VenePagos",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true,
+    "minify": false
+  }
+}

@@ -1,0 +1,24 @@
+[extension]
+name = "VenePagos Payment"
+handle = "venepagos-payment"
+type = "payments_extension"
+
+  [extension.targeting]
+  target = "payments.offsite.render"
+
+  [extension.capabilities]
+  network_access = true
+
+  [extension.settings]
+
+    [[extension.settings.fields]]
+    key = "checkout_mode"
+    type = "single_line_text_field"
+    name = "Modo de checkout"
+    description = "Modo de visualizacion del checkout: popup, newTab o redirect"
+
+    [[extension.settings.fields]]
+    key = "button_label"
+    type = "single_line_text_field"
+    name = "Texto del boton"
+    description = "Texto que se muestra en el boton de pago"
